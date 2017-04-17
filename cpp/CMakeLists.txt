@@ -19,6 +19,7 @@ set(poppler_cpp_HEADERS
   poppler-page-transition.h
   poppler-rectangle.h
   poppler-toc.h
+  poppler-extern-draw.h
   ${CMAKE_CURRENT_BINARY_DIR}/poppler-version.h
 )
 
@@ -29,6 +30,7 @@ set(poppler_cpp_Private_HEADERS
   poppler-page-private.h
   poppler-private.h
   poppler-toc-private.h
+  ExternDrawOutputDivice.h
 )
 
 set(poppler_cpp_SRCS
@@ -43,7 +45,9 @@ set(poppler_cpp_SRCS
   poppler-private.cpp
   poppler-rectangle.cpp
   poppler-toc.cpp
+  poppler-extern-draw.cpp
   poppler-version.cpp
+  ExternDrawOutputDivice.cpp
 )
 
 add_library(poppler-cpp SHARED ${poppler_cpp_SRCS} ${poppler_cpp_HEADERS} ${poppler_cpp_Private_HEADERS})
@@ -56,16 +60,6 @@ target_link_libraries(poppler-cpp poppler ${ICONV_LIBRARIES})
 install(TARGETS poppler-cpp RUNTIME DESTINATION bin LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 install(FILES
-  poppler-document.h
-  poppler-embedded-file.h
-  poppler-font.h
-  poppler-global.h
-  poppler-image.h
-  poppler-page.h
-  poppler-page-renderer.h
-  poppler-page-transition.h
-  poppler-rectangle.h
-  poppler-toc.h
-  ${CMAKE_CURRENT_BINARY_DIR}/poppler-version.h
+  ${poppler_cpp_HEADERS}
   DESTINATION include/poppler/cpp)
 
