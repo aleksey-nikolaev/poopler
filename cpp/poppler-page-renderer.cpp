@@ -342,6 +342,7 @@ struct SplashBitmapResultPrivate : public page_renderer::SplashBitmapResult
             imageData.format = Color::DeviceRGB;
             imageData.channels = 4;
             break;
+#if SPLASH_CMYK
         case splashModeCMYK8:
             imageData.format = Color::DeviceCMYK;
             imageData.channels = 4;
@@ -350,6 +351,7 @@ struct SplashBitmapResultPrivate : public page_renderer::SplashBitmapResult
             imageData.format = Color::DeviceN;
             imageData.channels = 8;
             break;
+#endif
         default:
             break;
         }
