@@ -61,6 +61,7 @@
 
 #ifndef HAVE_STRTOK_R
 
+#include "glibc.h"
 #include <string.h>
 
 #define __rawmemchr strchr

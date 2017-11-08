@@ -37,6 +37,7 @@
 #include <string>
 
 #include "gtypes.h"
+#include "glibc.h" // for strtok_r
 
 #ifdef __clang__
 # define GOOSTRING_FORMAT __attribute__((__annotate__("gooformat")))
