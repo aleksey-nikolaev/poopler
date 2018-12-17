@@ -24,7 +24,8 @@
 #include "poppler-image.h"
 #include "poppler-extern-draw.h"
 
-namespace poppler {
+namespace poppler
+{
 
 typedef unsigned int argb;
 
@@ -34,8 +35,7 @@ class page_renderer_private;
 class POPPLER_CPP_EXPORT page_renderer : public poppler::noncopyable
 {
 public:
-    enum render_hint
-    {
+    enum render_hint {
         antialiasing = 0x00000001,
         text_antialiasing = 0x00000002,
         text_hinting = 0x00000004
